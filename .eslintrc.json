@@ -1,0 +1,47 @@
+{
+	"parser": "babel-eslint",
+	"parserOptions": {
+		"ecmaVersion": 6,
+		"sourceType": "module",
+		"ecmaFeatures": {
+			"jsx": true
+		}
+	},
+	"plugins": ["flowtype", "react", "jsx-a11y", "jest", "prettier"],
+	"settings": {
+		"react": {
+			"pragma": "h"
+		}
+	},
+	"rules": {
+		"jsx-a11y/accessible-emoji": "warn",
+		"jsx-a11y/no-onchange": "warn",
+		"jsx-a11y/anchor-is-valid": "warn",
+		"jsx-a11y/click-events-have-key-events": "warn",
+		"jsx-a11y/no-static-element-interactions": "warn",
+		"jsx-a11y/no-noninteractive-element-to-interactive-role": "warn",
+		"jsx-a11y/no-noninteractive-element-interactions": "warn",
+		"jsx-a11y/no-noninteractive-tabindex": "warn",
+		"jsx-a11y/media-has-caption": "off",
+		"jsx-a11y/label-has-for": [
+			"warn",
+			{
+				"allowChildren": true
+			}
+		],
+		"flowtype/space-after-type-colon": "off",
+		"react/no-unknown-property": "off"
+	},
+	"env": {
+		"browser": true,
+		"node": true,
+		"jest": true
+	},
+	"extends": [
+		"eslint:recommended",
+		"plugin:flowtype/recommended",
+		"plugin:react/recommended",
+		"plugin:jsx-a11y/recommended",
+		"prettier"
+	]
+}
