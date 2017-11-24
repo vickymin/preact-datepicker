@@ -2,6 +2,8 @@ const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
+const production = process.env.NODE_ENV === 'production';
+
 const config = {
 	entry: {
 		'preact-datepicker': './src/index.js',
@@ -24,6 +26,19 @@ const config = {
 		 */
 		modules: ['node_modules'],
 	},
+
+	externals: {
+		/**
+		 * Preact is not included in the build
+		 */
+		preact: {
+			root: 'Preact',
+			commonjs2: 'preact',
+			commonjs: 'preact',
+			amd: 'preact',
+		},
+	},
+
 	module: {
 		rules: [
 			/**
@@ -79,21 +94,6 @@ const config = {
 				test: /\.js?$/,
 				include: /src/,
 				loader: 'babel-loader',
-				options: {
-					presets: [
-						[
-							'env',
-							{
-								modules: false,
-							},
-						],
-					],
-					plugins: [
-						['transform-react-jsx', { pragma: 'h' }],
-						'transform-object-rest-spread',
-						'transform-class-properties',
-					],
-				},
 			},
 		],
 	},
@@ -120,11 +120,12 @@ const config = {
 		/**
 		 * The define plugin makes it possible to consume a PRODUCTION constant in our javascript files to check for production builds
 		 */
-		new webpack.DefinePlugin({
-			'process.env': {
-				NODE_ENV: JSON.stringify('production'),
-			},
-		}),
+		production &&
+			new webpack.DefinePlugin({
+				'process.env': {
+					NODE_ENV: JSON.stringify('production'),
+				},
+			}),
 
 		/**
 		 * Enable scope hoisting webpack 3
@@ -134,14 +135,20 @@ const config = {
 		/**
 		 * Minify all code
 		 */
-		new webpack.LoaderOptionsPlugin({
-			minimize: true,
-			debug: false,
-		}),
-		new webpack.optimize.UglifyJsPlugin({
-			sourceMap: true,
-		}),
-	],
+		production &&
+			new webpack.LoaderOptionsPlugin({
+				minimize: true,
+				debug: false,
+			}),
+
+		/**
+		 * Minify all code using uglify but keep sourcemaps
+		 */
+		production &&
+			new webpack.optimize.UglifyJsPlugin({
+				sourceMap: true,
+			}),
+	].filter(Boolean),
 };
 
 module.exports = config;
