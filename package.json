@@ -12,9 +12,11 @@
 		"commit": "git-cz",
 		"prettier": "prettier --config ./.prettierrc --write",
 		"lint": "eslint src",
-		"prerelease":
+		"develop": "start-storybook -p 9001 -c .storybook",
+		"prebundle":
 			"yarn && yarn run lint && yarn run test --ci && rimraf dist && mkdir dist",
-		"release": "NODE_ENV=production && webpack --config ./webpack.config.js",
+		"bundle": "NODE_ENV=production && webpack --config ./webpack.config.js",
+		"build": "build-storybook -c .storybook -o dist",
 		"test": "NODE_ENV=test && jest",
 		"test:watch": "yarn run test --watch",
 		"semantic-release":

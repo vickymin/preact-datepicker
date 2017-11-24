@@ -1,0 +1,143 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots DatePicker Default 1`] = `
+<div>
+  <div
+    style={Object {}}
+  >
+    <div>
+      DatePicker
+    </div>
+  </div>
+  <div
+    style={undefined}
+  >
+    <div
+      style={
+        Object {
+          "WebkitFontSmoothing": "antialiased",
+          "backgroundColor": "#fff",
+          "border": "1px solid #eee",
+          "borderRadius": "2px",
+          "boxShadow": "0px 2px 3px rgba(0, 0, 0, 0.05)",
+          "color": "#444",
+          "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+          "fontSize": "15px",
+          "fontWeight": 300,
+          "lineHeight": 1.45,
+          "marginTop": "50px",
+          "padding": "20px 40px 40px",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "marginBottom": 0,
+          }
+        }
+      >
+        <p
+          style={
+            Object {
+              "WebkitFontSmoothing": "antialiased",
+              "color": "#444",
+              "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+              "fontSize": "15px",
+            }
+          }
+        >
+          The 
+          <em>
+            default
+          </em>
+           datepicker.
+        </p>
+      </div>
+      <div>
+        <h1
+          style={
+            Object {
+              "borderBottom": "1px solid #EEE",
+              "fontSize": "25px",
+              "margin": "20px 0 0 0",
+              "padding": "0 0 5px 0",
+            }
+          }
+        >
+          Story Source
+        </h1>
+        <pre
+          style={
+            Object {
+              "backgroundColor": "#fafafa",
+              "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+              "fontSize": ".88em",
+              "lineHeight": 1.5,
+              "overflowX": "scroll",
+              "padding": ".5rem",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "paddingLeft": 18,
+                "paddingRight": 3,
+              }
+            }
+          >
+            <span
+              style={
+                Object {
+                  "color": "#777",
+                }
+              }
+            >
+              &lt;DatePicker
+            </span>
+            <span />
+            <span
+              style={
+                Object {
+                  "color": "#777",
+                }
+              }
+            >
+              /&gt;
+            </span>
+          </div>
+        </pre>
+      </div>
+      <div>
+        <h1
+          style={
+            Object {
+              "borderBottom": "1px solid #EEE",
+              "fontSize": "25px",
+              "margin": "20px 0 0 0",
+              "padding": "0 0 5px 0",
+            }
+          }
+        >
+          Prop Types
+        </h1>
+        <div>
+          <h2
+            style={
+              Object {
+                "margin": "20px 0 0 0",
+              }
+            }
+          >
+            "DatePicker" Component
+          </h2>
+          <small>
+            No propTypes defined!
+          </small>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
