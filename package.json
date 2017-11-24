@@ -1,27 +1,28 @@
 {
 	"name": "preact-datepicker",
-	"version": "0.0.0",
+	"version": "0.0.0-development",
 	"description": "A reusable datepicker component for Preact",
 	"main": "dist/index.js",
 	"module": "src/index.js",
-	"files": [
-		"dist",
-		"src"
-	],
+	"files": ["dist", "src"],
 	"directories": {
 		"lib": "src"
 	},
 	"scripts": {
+		"commit": "git-cz",
 		"prettier": "prettier --config ./.prettierrc --write",
 		"lint": "eslint src",
-		"prerelease": "yarn && yarn run lint && yarn run test --ci && rimraf dist && mkdir dist",
+		"prerelease":
+			"yarn && yarn run lint && yarn run test --ci && rimraf dist && mkdir dist",
 		"release": "NODE_ENV=production && webpack --config ./webpack.config.js",
 		"test": "NODE_ENV=test && jest",
-		"test:watch": "yarn run test --watch"
+		"test:watch": "yarn run test --watch",
+		"semantic-release":
+			"semantic-release pre && npm publish && semantic-release post"
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/BartWaardenburg/preact-datepicker.git"
+		"url": "https://github.com/BartWaardenburg/preact-datepicker.git"
 	},
 	"keywords": [
 		"preact",
@@ -56,7 +57,10 @@
 		"babel-preset-env": "^1.6.1",
 		"babel-preset-react": "^6.24.1",
 		"classnames": "^2.2.5",
+		"codecov": "^3.0.0",
+		"commitizen": "^2.9.6",
 		"css-loader": "^0.28.7",
+		"cz-conventional-changelog": "^2.1.0",
 		"empty": "^0.10.1",
 		"eslint": "^4.11.0",
 		"eslint-config-prettier": "^2.8.0",
@@ -75,10 +79,13 @@
 		"less-loader": "^4.0.5",
 		"lint-staged": "^5.0.0",
 		"postcss-loader": "^2.0.8",
+		"preact": "^8.2.6",
+		"preact-compat": "^3.17.0",
 		"preact-render-spy": "^1.2.1",
 		"preact-render-to-json": "^3.6.6",
 		"prettier": "^1.8.2",
 		"raf": "^3.4.0",
+		"semantic-release": "^8.2.0",
 		"storybook": "^1.0.0",
 		"style-loader": "^0.19.0",
 		"url-loader": "^0.6.2",
@@ -87,9 +94,9 @@
 	"peerDependencies": {
 		"preact": "^8.2.6"
 	},
-	"dependencies": {
-		"codecov": "^3.0.0",
-		"preact-compat": "^3.17.0",
-		"semantic-release": "^8.2.0"
+	"config": {
+		"commitizen": {
+			"path": "./node_modules/cz-conventional-changelog"
+		}
 	}
 }
