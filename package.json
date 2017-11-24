@@ -4,15 +4,17 @@
 	"description": "A reusable datepicker component for Preact",
 	"main": "dist/index.js",
 	"module": "src/index.js",
-	"files": ["dist", "src"],
+	"files": [
+		"dist",
+		"src"
+	],
 	"directories": {
 		"lib": "src"
 	},
 	"scripts": {
 		"prettier": "prettier --config ./.prettierrc --write",
 		"lint": "eslint src",
-		"prerelease":
-			"yarn && yarn run lint && yarn run test --ci && rimraf dist && mkdir dist",
+		"prerelease": "yarn && yarn run lint && yarn run test --ci && rimraf dist && mkdir dist",
 		"release": "NODE_ENV=production && webpack --config ./webpack.config.js",
 		"test": "NODE_ENV=test && jest",
 		"test:watch": "yarn run test --watch"
@@ -77,5 +79,8 @@
 	},
 	"peerDependencies": {
 		"preact": "^8.2.6"
+	},
+	"dependencies": {
+		"codecov": "^3.0.0"
 	}
 }
