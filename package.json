@@ -20,7 +20,7 @@
 		"test": "NODE_ENV=test && jest",
 		"test:watch": "yarn run test --watch",
 		"semantic-release":
-			"semantic-release pre && npm publish && semantic-release post"
+			"semantic-release pre && npm publish && semantic-release post || true"
 	},
 	"repository": {
 		"type": "git",
