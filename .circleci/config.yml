@@ -39,9 +39,9 @@ jobs:
 
       - run: yarn codecov
 
-      - run: build:component
+      - run: yarn run build:component
       
-      - run: build:storybook
+      - run: yarn run build:storybook
 
       - run: yarn run semantic-release
 
