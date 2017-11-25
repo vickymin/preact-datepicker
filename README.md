@@ -9,6 +9,7 @@
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 
 A reusable datepicker component for Preact
+(https://preact-datepicker.netlify.com)
 
 Full credits go to https://github.com/gpbl/react-day-picker. This is just a
 preact port for now.

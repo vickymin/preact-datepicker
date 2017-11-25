@@ -44,7 +44,7 @@
 	"bugs": {
 		"url": "https://github.com/BartWaardenburg/preact-datepicker/issues"
 	},
-	"homepage": "https://github.com/BartWaardenburg/preact-datepicker#readme",
+	"homepage": "https://preact-datepicker.netlify.com",
 	"devDependencies": {
 		"@storybook/addon-info": "^3.2.16",
 		"@storybook/addon-jest": "^3.2.16",

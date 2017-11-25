@@ -5,7 +5,7 @@ import { setOptions } from '@storybook/addon-options';
 
 setOptions({
 	name: 'Preact Datepicker',
-	url: 'https://github.com/BartWaardenburg/preact-datepicker',
+	url: 'https://preact-datepicker.netlify.com',
 	downPanelInRight: true,
 });
 
