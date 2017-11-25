@@ -13,7 +13,7 @@ const config = {
 	 * Library target is set to umd so the anwb core js loading system can import it
 	 */
 	output: {
-		path: path.resolve(__dirname, `./dist`),
+		path: path.resolve(__dirname, `./lib`),
 		filename: 'index.js',
 		chunkFilename: '[name]-chunk.js',
 		library: '[name]',

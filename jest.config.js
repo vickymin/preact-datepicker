@@ -1,5 +1,4 @@
 module.exports = {
-	collectCoverage: true,
 	testMatch: ['**/?(*.)spec.js?(x)'],
 	setupFiles: ['raf/polyfill'],
 	snapshotSerializers: ['jest-serializer-html-string'],

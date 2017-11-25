@@ -2,25 +2,29 @@
 	"name": "preact-datepicker",
 	"version": "0.0.0-development",
 	"description": "A reusable datepicker component for Preact",
-	"main": "dist/index.js",
+	"main": "lib/index.js",
 	"module": "src/index.js",
-	"files": ["dist", "src"],
+	"files": [
+		"lib",
+		"src"
+	],
 	"directories": {
 		"lib": "src"
 	},
 	"scripts": {
 		"commit": "git-cz",
+		"semantic-release": "semantic-release pre && npm publish && semantic-release post || true",
 		"prettier": "prettier --config ./.prettierrc --write",
 		"lint": "eslint src",
 		"develop": "start-storybook -p 9001 -c .storybook",
-		"prebundle":
-			"yarn && yarn run lint && yarn run test --ci && rimraf dist && mkdir dist",
-		"bundle": "NODE_ENV=production && webpack --config ./webpack.config.js",
-		"build": "build-storybook -c .storybook -o dist",
+		"bundle": "webpack --config ./webpack.config.js",
+		"clear:component": "rimraf lib && mkdir lib",
+		"build:component": "yarn clear:component && NODE_ENV=production bundle",
+		"clear:storybook": "rimraf dist && mkdir dist",
+		"build:storybook": "yarn clear:storybook && build-storybook -c .storybook -o dist",
 		"test": "NODE_ENV=test && jest",
-		"test:watch": "yarn run test --watch",
-		"semantic-release":
-			"semantic-release pre && npm publish && semantic-release post || true"
+		"test:ci": "yarn run test --coverage --ci",
+		"test:watch": "yarn run test --watch"
 	},
 	"repository": {
 		"type": "git",

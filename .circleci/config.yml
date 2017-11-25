@@ -32,10 +32,16 @@ jobs:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
-        
-      - run: yarn test
+
+      - run: yarn run lint
+
+      - run: yarn run test:ci
 
       - run: yarn codecov
+
+      - run: build:component
+      
+      - run: build:storybook
 
       - run: yarn run semantic-release
 
