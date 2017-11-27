@@ -1,4 +1,5 @@
 /* @flow */
+
 const WEEKDAYS_LONG = [
 	'Sunday',
 	'Monday',

@@ -1,11 +1,12 @@
 /* @flow */
 /* eslint-disable no-console */
-import { h } from 'preact';
+import { h, Component } from 'preact';
 import { storiesOf } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
 import { withKnobs, boolean, text, number } from '@storybook/addon-knobs';
 
 import DatePicker from './DatePicker';
+import DateUtils from './DateUtils';
 
 const stories = storiesOf('DatePicker', module);
 
@@ -91,5 +92,95 @@ stories.add(
 			pagedNavigation={boolean('pagedNavigation', false)}
 			reverseMonths={boolean('reverseMonths', false)}
 		/>
+	))
+);
+
+stories.add(
+	'Selected Days',
+	withInfo(`A datepicker displaying a set of selected days.`)(() => (
+		<DatePicker
+			initialMonth={new Date(2018, 0)}
+			selectedDays={[
+				new Date(2018, 0, 3),
+				new Date(2018, 0, 1),
+				{
+					after: new Date(2018, 0, 15),
+					before: new Date(2018, 0, 22),
+				},
+			]}
+		/>
+	))
+);
+
+class SelectDayDatePicker extends Component<{}, { selectedDay: ?Date }> {
+	state = {
+		selectedDay: undefined,
+	};
+
+	handleDayClick = (day, { selected }) => {
+		this.setState({
+			selectedDay: selected ? undefined : day,
+		});
+	};
+
+	render() {
+		return (
+			<div>
+				<DatePicker
+					selectedDays={this.state.selectedDay}
+					onDayClick={this.handleDayClick}
+				/>
+				<p>
+					{this.state.selectedDay
+						? this.state.selectedDay.toLocaleDateString()
+						: 'Please select a day 👻'}
+				</p>
+			</div>
+		);
+	}
+}
+
+stories.add(
+	'Interactive Selected Days',
+	withInfo(`A datepicker where a click on a day marks it as selected.`)(() => (
+		<SelectDayDatePicker />
+	))
+);
+
+class SelectMultipleDatePicker extends Component<
+	{},
+	{ selectedDays: Array<any> }
+> {
+	state = {
+		selectedDays: [],
+	};
+
+	handleDayClick = (day, { selected }) => {
+		const { selectedDays } = this.state;
+		if (selected) {
+			const selectedIndex = selectedDays.findIndex(selectedDay =>
+				DateUtils.isSameDay(selectedDay, day)
+			);
+			selectedDays.splice(selectedIndex, 1);
+		} else {
+			selectedDays.push(day);
+		}
+		this.setState({ selectedDays });
+	};
+
+	render() {
+		return (
+			<DatePicker
+				selectedDays={this.state.selectedDays}
+				onDayClick={this.handleDayClick}
+			/>
+		);
+	}
+}
+
+stories.add(
+	'Interactive Multiple Selected Days',
+	withInfo(`A datepicker where a click on a day marks it as selected.`)(() => (
+		<SelectMultipleDatePicker />
 	))
 );

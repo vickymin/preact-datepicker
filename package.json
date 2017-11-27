@@ -4,24 +4,24 @@
 	"description": "A reusable datepicker component for Preact",
 	"main": "lib/index.js",
 	"module": "src/index.js",
-	"files": ["lib", "src"],
+	"files": [
+		"lib",
+		"src"
+	],
 	"directories": {
 		"lib": "src"
 	},
 	"scripts": {
 		"commit": "git-cz",
-		"semantic-release":
-			"semantic-release pre && npm publish && semantic-release post || true",
+		"semantic-release": "semantic-release pre && npm publish && semantic-release post || true",
 		"prettier": "prettier --config ./.prettierrc --write",
 		"lint": "eslint src",
 		"develop": "start-storybook -p 9001 -c .storybook",
 		"bundle": "webpack --config ./webpack.config.js",
 		"clear:component": "rimraf lib && mkdir lib",
-		"build:component":
-			"yarn clear:component && NODE_ENV=production yarn run bundle",
+		"build:component": "yarn clear:component && NODE_ENV=production yarn run bundle",
 		"clear:storybook": "rimraf dist && mkdir dist",
-		"build:storybook":
-			"yarn clear:storybook && build-storybook -c .storybook -o dist",
+		"build:storybook": "yarn clear:storybook && build-storybook -c .storybook -o dist",
 		"test": "NODE_ENV=test && jest",
 		"test:ci": "yarn run test --coverage --ci",
 		"test:watch": "yarn run test --watch"
@@ -109,5 +109,8 @@
 		"commitizen": {
 			"path": "./node_modules/cz-conventional-changelog"
 		}
+	},
+	"dependencies": {
+		"date-fns": "^1.29.0"
 	}
 }

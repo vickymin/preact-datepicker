@@ -8,6 +8,8 @@
 [![Semantic Release](https://img.shields.io/badge/semantic--release-%F0%9F%9A%80-ffffff.svg)](https://github.com/semantic-release/semantic-release)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 
+# EARLY ALPHA DO NOT USE YET
+
 A reusable datepicker component for Preact
 (https://preact-datepicker.netlify.com)
 
