@@ -65,7 +65,7 @@
 		"classnames": "^2.2.5",
 		"codecov": "^3.0.0",
 		"commitizen": "^2.9.6",
-		"condition-circle": "^1.5.0",
+		"condition-circle": "^2.0.0",
 		"css-loader": "^0.28.7",
 		"cz-conventional-changelog": "^2.1.0",
 		"empty": "^0.10.1",
