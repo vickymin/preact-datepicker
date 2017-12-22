@@ -80,7 +80,7 @@
 		"file-loader": "^1.1.5",
 		"flow-bin": "^0.60.0",
 		"husky": "^0.14.3",
-		"jest": "^21.2.1",
+		"jest": "^22.0.4",
 		"jest-serializer-html-string": "^1.0.1",
 		"less": "^2.7.3",
 		"less-loader": "^4.0.5",
