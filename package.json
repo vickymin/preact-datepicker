@@ -52,7 +52,7 @@
 		"@storybook/addon-options": "^3.2.16",
 		"@storybook/addon-storyshots": "^3.2.16",
 		"@storybook/react": "^3.2.16",
-		"autoprefixer": "^7.1.6",
+		"autoprefixer": "^8.2.0",
 		"babel-core": "^6.26.0",
 		"babel-eslint": "^8.0.2",
 		"babel-jest": "^21.2.0",
