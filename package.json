@@ -84,7 +84,7 @@
 		"jest-serializer-html-string": "^1.0.1",
 		"less": "^2.7.3",
 		"less-loader": "^4.0.5",
-		"lint-staged": "^6.0.0",
+		"lint-staged": "^7.0.1",
 		"postcss-loader": "^2.0.8",
 		"preact": "^8.2.6",
 		"preact-compat": "^3.17.0",
