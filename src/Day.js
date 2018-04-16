@@ -10,7 +10,6 @@ function handleEvent(handler, day, modifiers) {
 		return undefined;
 	}
 	return e => {
-		e.persist();
 		handler(day, modifiers, e);
 	};
 }

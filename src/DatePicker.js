@@ -329,7 +329,6 @@ class DatePicker extends Component<Props, State> {
 	// Event handlers
 
 	handleKeyDown = e => {
-		e.persist();
 
 		switch (e.keyCode) {
 			case LEFT:
@@ -354,7 +353,6 @@ class DatePicker extends Component<Props, State> {
 	};
 
 	handleDayKeyDown = (day, modifiers, e) => {
-		e.persist();
 		switch (e.keyCode) {
 			case LEFT:
 				Helpers.cancelEvent(e);
@@ -388,7 +386,6 @@ class DatePicker extends Component<Props, State> {
 	};
 
 	handleDayClick = (day, modifiers, e) => {
-		e.persist();
 		if (modifiers[this.props.classNames.outside]) {
 			this.handleOutsideDayClick(day);
 		}
@@ -414,7 +411,6 @@ class DatePicker extends Component<Props, State> {
 		this.showMonth(month);
 		e.target.blur();
 		if (this.props.onTodayButtonClick) {
-			e.persist();
 			this.props.onTodayButtonClick(
 				new Date(today.getFullYear(), today.getMonth(), today.getDate()),
 				ModifiersUtils.getModifiersForDay(today, this.props.modifiers),

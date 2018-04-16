@@ -176,11 +176,11 @@ class Month extends Component<Props> {
 										role="gridcell"
 										{...(onWeekClick
 											? {
-													onClick: e => onWeekClick(weekNumber, week, e),
-													onKeyUp: e =>
-														e.keyCode === ENTER &&
-														onWeekClick(weekNumber, week, e),
-												}
+												onClick: e => onWeekClick(weekNumber, week, e),
+												onKeyUp: e =>
+													e.keyCode === ENTER &&
+													onWeekClick(weekNumber, week, e),
+											}
 											: {})}
 									>
 										{this.props.renderWeek(weekNumber, week, month)}
